@@ -86,6 +86,20 @@
             margin-top: 10px;
         }
     </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>并排播放视频</title>
+        <style>
+            .video-container {
+                display: flex;
+            }
+            .video {
+                width: 50%;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
 
 </head>
 
@@ -203,6 +217,55 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Gallery
+                </h3>
+                <body>
+                    <div class="video-container">
+                        <div class="video">
+                            <video controls width="100%">
+                                <source src="videos/1.mp4" type="video/mp4">
+                            </video>
+                            <p>
+                                The guy is imitating a singing star. 
+                            </p>
+                        </div>
+                
+                        <div class="video">
+                            <video controls width="100%">
+                                <source src="videos/2.mp4" type="video/mp4">
+                            </video>
+                            <p>
+                                Jump on one foot.
+                            </p>
+                        </div>
+                    </div>
+                </body>
+                <body>
+                    <div class="video-container">
+                        <div class="video">
+                            <video controls width="100%">
+                                <source src="videos/3.mp4" type="video/mp4">
+                            </video>
+                            <p>
+                                Experiencing a pround sense of joy. 
+                            </p>
+                        </div>
+                
+                        <div class="video">
+                            <video controls width="100%">
+                                <source src="videos/4.mp4" type="video/mp4">
+                            </video>
+                            <p>
+                                Bury one's head and cry, and finally crouched down.
+                            </p>
+                        </div>
+                    </div>
+                </body>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -297,7 +360,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <small>
-                    Last updated: 12/21/2023.
+                    Last updated: 12/23/2023.
                 </small>
             </div>
         </div>
