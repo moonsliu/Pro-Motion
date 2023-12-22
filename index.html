@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Plan, Posture and Go: Towards Open-World Text-to-Motion Generation</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="images/teaser.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="" /> -->
+    <meta property="og:title" content="Plan, Posture and Go: Towards Open-World Text-to-Motion Generation" />
+    <meta property="og:description"
+        content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Plan, Posture and Go: Towards Open-World Text-to-Motion Generation" />
+    <meta name="twitter:description"
+        content="" />
+    <meta name="twitter:image" content="images/teaser.png" />
+
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃🏼</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <style>
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+
+        }
+
+        /* .container {
+            margin-left: -100px;
+        } */
+        .image-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .caption-row {
+            align-items: flex-end;
+        }
+
+        .caption-row .image-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .caption-row .image-wrapper p {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Plan, Posture and Go</b>: <br> Towards Open-World Text-to-Motion Generation </br>
+                <!-- <small>
+                    <br>
+                    Anonymous Submission
+                </small> -->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="">
+                            Jinpeng Liu*<sup>1</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                    <li>
+                        <a href="https://github.com/Dai-Wenxun">
+                            Wenxun Dai*<sup>1</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                    <li>
+                        <a href="https://www.chunyuwang.org/">
+                            Chunyu Wang*<sup>2</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                    <!-- <br> -->
+                    <li>
+                        <a href="https://www.linkedin.com/in/yiji-cheng-a8b922213/">
+                            Yiji Cheng<sup>1</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                    <li>
+                        <a href="https://andytang15.github.io/">
+                            Yansong Tang<sup>&dagger;1</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                    <li>
+                        <a href="https://www.microsoft.com/en-us/research/people/xtong/">
+                            Xin Tong<sup>2</sup>
+                        </a>
+                        <!-- </br>Tsinghua University -->
+                    </li>
+                </ul>
+                <sup>1</sup>Shenzhen International Graudate School, Tsinghua University &nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>Microsoft Research Asia
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://arxiv.org/abs/2303.12965">
+                            <image src="images/paper_front_page.png" height="50px">
+                                <h4><strong>Paper (arXiv)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/moonsliu/Pro-Motion">
+                            <image src="images/github.png" height="50px">
+                                <h4><strong>Code<br>(Coming Soon)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <image src="images/teaser.png" width="100%"></image>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify">
+                    Exemplary motions generated by our proposed <b>PRO-Motion</b> system. Different from conventional models trained on paired text-motion data, our PRO-Motion can generate 3D human motion with global body translation and rotation from <i>open-world</i> text prompts, such as <i>"Jump on one foot"</i> and <i>"Experiencing a profound sense of joy"</i>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Conventional text-to-motion generation methods are usually trained on limited text-motion pairs, making them hard to generalize to open-world scenarios. Some works use the CLIP model to align the motion space and the text space, aiming to enable motion generation from natural language motion descriptions. However, they are still constrained to generate limited and unrealistic in-place motions. To address these issues, we present a divide-and-conquer framework named <b>PRO-Motion</b>, which consists of three modules as motion planner, posture-diffuser and go-diffuser. The motion planner instructs Large Language Models (LLMs) to generate a sequence of scripts describing the key postures in the target motion. Differing from natural languages, the scripts can describe all possible postures following very simple text templates. This significantly reduces the complexity of posture-diffuser, which transforms a script to a posture, paving the way for open-world generation. Finally,  go-diffuser, implemented as another diffusion model,  estimates whole-body translations and rotations for all postures, resulting in realistic motions.  Experimental results have shown the superiority of our method with other counterparts, and demonstrated its capability of generating diverse and realistic motions from complex open-world prompts such as <t>"Experiencing a profound sense of joy"</t>.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <img src="images/pipeline.png" style="width:100%;" class="img-responsive center-block" alt="overview">
+                        <p class="text-justify">
+                            <b>Illustration of our framework for open-world text-to-motion generation from language.</b> Specifically, we employ the large language models as the motion planner to plan pose scripts. Then, our <t>Posture-Diffuser</t> module receives discrete pose descriptions and generates corresponding poses to construct a candidate posture base. <t>Posture Planning</t> is utilized to select the reasonable pose sequence from the candidate posture base. Finally, the Go-Diffuser module increases the motion frames and infers the translation and rotation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparisons
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <img src="images/t2m.png" style="width:100%;" class="img-responsive center-block" alt="overview">
+                        </video>
+                    </div>
+                </div>
+                <p>
+                    Comparison of our method with previous text-to-motion generation methods.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Posture-Diffuser
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <img src="images/t2p.png" style="width:100%;" class="img-responsive center-block" alt="overview">
+                        </video>
+                    </div>
+                </div>
+                <p>
+                    Comparison of our method with previous text-to-pose generation methods.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Go-Diffuser
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <img src="images/p2m.png" style="width:100%;" class="img-responsive center-block" alt="overview">
+                    </div>
+                </div>
+                <p>
+                    Comparison of our method with other pose-to-motion generation methods. Yellow color represents details that need attention, and red color represents inaccuracies.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    New Advantages - Precise Pose Control
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <img src="images/t2p-supp.png" style="width:100%;" class="img-responsive center-block" alt="overview">
+                    </div>
+                </div>
+                <p>
+                    Examples of Precise Pose Control. In the first example #1, we control the position of hands, with the original and modified hand descriptions represented in <b style="color: brown">brown</b> and <b style="color: red">brown</b> respectively. In the second example #2, "<b style="color: red"><del>The</del></b>" represents deleting the description. To determine whether the description of a body part is the reason for the proper positioning of that body part, we removed the corresponding descriptions to see if the body joints would change as a result of this operation. We test the model's understanding of the left and right sides of the body.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10">
+                    <textarea id="bibtex" class="form-control" readonly>
+                    </textarea>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://jonbarron.info/mipnerf360/">Jon Barron</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <small>
+                    Last updated: 12/21/2023.
+                </small>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slick').slick({
+                // setting-name: setting-value
+                "autoplay": true,
+                dots: true,
+                infinite: true,
+                speed: 10000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // centerMode: true,
+                // centerPadding: '60px',
+                // responsive: [
+
+                // ]
+            });
+        });
+    </script>
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+</body>
+</html>
