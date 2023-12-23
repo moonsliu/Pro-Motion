@@ -39,4 +39,4 @@
 ![pipeline](images/pipeline.png)
 
 ## Updates
-- [2023-12] Project page and video released. Code coming soon! :running::running::running:
+- [2023-12] Project page released. Code coming soon! :running::running::running:
