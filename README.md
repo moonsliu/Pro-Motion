@@ -34,7 +34,7 @@
 </div>
 
 <strong><a href='https://moonsliu.github.io/Pro-Motion/' target='_blank'>Project Page</a></strong>&emsp;
-<strong><a href=''>Paper</a></strong>&emsp;
+<strong><a href='https://arxiv.org/pdf/2312.14828.pdf'>Paper(arXiv)</a></strong>&emsp;
 
 ![teaser](images/teaser.png)
 ![pipeline](images/pipeline.png)
