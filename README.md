@@ -1,6 +1,6 @@
 <div align="center">
 <h1>
-  Plan, Posture and Go: Towards Open-World Text-to-Motion Generation
+  Plan, Posture and Go: Towards Open-vocabulary Text-to-Motion Generation
 </h1>
 
 <div>
@@ -37,7 +37,7 @@
 <strong><a href='https://arxiv.org/pdf/2312.14828.pdf'>Paper(arXiv)</a></strong>&emsp;
 
 ![teaser](images/teaser.png)
-![pipeline](images/pipeline.png)
+![pipeline](images/method.png)
 
 ## Updates
-- [2023-12] Project page released. Code coming soon! :running::running::running:
+- [2024-8] Project page Updated.
